@@ -1,0 +1,158 @@
+<!doctype html>
+<head>
+    <title> CREST Application </title>
+    <script src = "{{ url_for('static', filename = 'jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'fonts.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'jquery.dataTables.min.css') }}">
+    <script src="{{ url_for('static', filename = 'jquery.json-view.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'jquery.json-view.css') }}">
+<style>
+    .content {
+    margin-left: 0px !important;
+    }
+</style>
+</head>
+<body>
+{% if current_user.is_authenticated %}
+<nav class="navbar navbar-default navbar-static-top navbar-main" role="navigation">
+    <div class="navbar-header">
+        <img src="{{ url_for('static', filename = 'ss-logo.png') }}" alt="logo">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <!-- <a href='http://www.shieldsquare.co/blog/customer-faq/' target='_blank' ><i style="font-size:14px; color:#696969;" class="fa fa-info-circle"></i> FAQ</a> -->
+                <a href="#" class="dropdown-toggle avatar pull-right" style="left:950px" data-toggle="dropdown" title="/invalidate &#10;Invalidates a token on logout.">
+                    <span class="hidden-small">{{ current_user.email }}<b class="caret"></b></span>
+                </a>
+                <ul class="dropdown-menu pull-right" style="left:950px;">
+                    <li>
+                        <a href="{{ url_for('auth.logout') }}" onclick="signout()">
+                        <i class="fa fa-sign-out"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<aside class = "sidebar" style="width:190px;">
+<ul class="nav nav-stacked">
+    <li><a href="add_users" onclick="add_users()" title="A Partner User can add End-Users/Customers."><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">ADD USER</i></a></li>
+    <li><a href="users" onclick="users()" title="/subscriber-details on click of details button &#10;/signup on tick of the checkbox"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">LIST USERS</i></a></li>
+    <li><a href="#" onclick="get_subscribers()" title="/subscribers"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">SUBSCRIBERS</i></a></li>
+</ul>
+</aside>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+
+<script>
+
+    function signout(){
+    console.log("in signout");
+    var token = sessionStorage.getItem('token'); 
+    console.log(token); 
+    $.ajax({
+        url : '/auth/token_invalidate',
+        data: {'token': token},
+        type: 'POST',
+        success:function(response)
+        {
+            console.log('in success');
+            console.log(response);    
+        },
+        error:function(response)
+        {
+            console.log('in error');
+            console.log(response.status);
+        }
+    }); 
+}
+
+$.ajax({
+        url: '/auth/get_api_server',
+        data:{'userid':1},
+        type: 'GET',
+        success:function(response)
+        {
+            resp = JSON.parse(response);
+            console.log();
+            api_server = resp.api_server;
+            sessionStorage.setItem('api_server',api_server);
+        },
+        error:function(data)
+        {
+            console.log(data);
+        }
+    }); 
+    
+function get_subscribers(){
+    $.ajax({
+        url: '/auth/authenticate',
+        data:{'userid':1},
+        type: 'GET',
+        success:function(response)
+        {
+        resp = JSON.parse(response);
+        console.log(response);
+        token = resp['token'];
+        console.log(token);
+        sessionStorage.setItem('token',token);
+        field = sessionStorage.getItem('token');
+            $.ajax({
+                url : api_server+'/subscribers',
+                headers: {'Authorization': 'Bearer ' + token},
+                type: 'GET',
+                success:function(response)
+                {
+                    console.log(response);
+                    $('#show-json-result').html('');
+                    $('.panel-primary').css('display','block');
+                    $('#show-json-result').jsonView(response);
+                },
+                    error:function(data){
+                        $('#show-json-result').html('');
+                }
+            });
+        }
+    });
+}        
+
+/* $(document).ready(function () {
+
+        $("#dt1").datepicker({
+            dateFormat: "dd-M-yy",
+            minDate: 0,
+            onSelect: function (date) {
+                var dt2 = $('#dt2');
+                var startDate = $(this).datepicker('getDate');
+                var minDate = $(this).datepicker('getDate');
+                dt2.datepicker('setDate', minDate);
+                startDate.setDate(startDate.getDate() + 365);
+                //sets dt2 maxDate to the last day of 365 days window
+                dt2.datepicker('option', 'maxDate', startDate);
+                dt2.datepicker('option', 'minDate', minDate);
+                $(this).datepicker('option', 'minDate', minDate);
+                }
+            });
+            $("#dt2").datepicker({
+            dateFormat: "dd-M-yy"
+        });
+    }); */
+
+</script>
+{% endif %}
+{% block content %}
+{% endblock %}
+</body>
+</html>

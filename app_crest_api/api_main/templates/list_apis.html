@@ -1,0 +1,186 @@
+{% extends "customer_base.html" %}
+{% block content %}
+{% block head %}
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="{{ url_for('static', filename = 'jquery.json-view.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'jquery.json-view.css') }}">
+<script src="{{ url_for('static', filename = 'apis.js') }}"></script>
+{% endblock %}
+{% block body %}
+<div class="content">     
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary" style="display:none;">
+                <div class="panel-heading">
+                    Summary
+                </div>
+                <div class="panel-body" style="max-height:500px; overflow-y:scroll;">
+                    <div id = "show-json-result"></div>
+                    <input type="hidden" id = "userid" value="{{current_user.id}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+var token = sessionStorage.getItem('token');
+var api_server = sessionStorage.getItem('api_server');
+
+
+function get_stats(){   
+    $.ajax({
+            url : api_server+'/summary/stats/all',
+            headers: {'Authorization': 'Bearer ' + token},
+            type: 'GET',
+            success:function(response)
+            {
+                console.log(response);
+                $('#show-json-result').html('');
+                $('.panel-primary').css('display','block');
+                $('#show-json-result').jsonView(response);
+            
+            },
+            error:function(data){
+                console.log(data);
+            }
+    });
+}
+
+
+function get_signatures(){
+    $.ajax({
+            url : api_server+'/summary/stats/signatures',
+            headers: {'Authorization': 'Bearer ' + token},
+            type: 'GET',
+            success:function(response)
+            {
+                console.log(response);
+                $('#show-json-result').html('');
+                $('.panel-primary').css('display','block');
+                $('#show-json-result').jsonView(response);
+            },
+            error:function(data){
+                console.log(data);
+            }
+    });
+}
+
+
+function get_api_hits(){
+    $.ajax({
+            url : api_server+'/summary/stats/api-hits',
+            headers: {'Authorization': 'Bearer ' + token},
+            type: 'GET',
+            success:function(response)
+            {
+                console.log(response);
+                $('#show-json-result').html('');
+                $('.panel-primary').css('display','block');
+                $('#show-json-result').jsonView(response);
+            },
+            error:function(data){
+                $('#show-json-result').html('');
+            }
+    });
+}
+
+
+function get_bot_traffic(){    
+    $.ajax({
+            url : api_server+'/summary/classification/bot-traffic',
+            headers: {'Authorization': 'Bearer ' + token},
+            type: 'GET',
+            success:function(response)
+            {
+                console.log(response);
+                $('#show-json-result').html('');
+                $('.panel-primary').css('display','block');
+                $('#show-json-result').jsonView(response);
+            },
+            error:function(data){
+                $('#show-json-result').html('');
+            }
+    });
+}
+
+
+function get_bad_bots(){
+    $.ajax({
+            url : api_server+'/summary/traffic/bad-bots',
+            headers: {'Authorization': 'Bearer ' + token},
+            type: 'GET',
+            success:function(response)
+            {
+                console.log(response);
+                $('#show-json-result').html('');
+                $('.panel-primary').css('display','block');
+                $('#show-json-result').jsonView(response);
+            },
+            error:function(data){
+                $('#show-json-result').html('');
+            }
+    });
+}
+
+    
+function get_legitimate_bots(){
+        $.ajax({
+            url : api_server+'/summary/traffic/legitimate-bots',
+            headers: {'Authorization': 'Bearer ' + token},
+            type: 'GET',
+            success:function(response)
+            {
+                console.log(response);
+                $('#show-json-result').html('');
+                $('.panel-primary').css('display','block');
+                $('#show-json-result').jsonView(response);
+            },
+            error:function(data){
+                $('#show-json-result').html('');
+            }
+    });
+}
+
+function get_searchengine(){
+        $.ajax({
+            url : api_server+'/analysis/search-engine-bots',
+            headers: {'Authorization': 'Bearer ' + token},
+            type: 'GET',
+            success:function(response)
+            {
+                console.log(response);
+                $('#show-json-result').html('');
+                $('.panel-primary').css('display','block');
+                $('#show-json-result').jsonView(response);
+            },
+                error:function(data){
+                    $('#show-json-result').html('');
+            }
+    });
+}
+
+function get_botanalysis(){
+        $.ajax({
+            url : api_server+'/live/analysis/search-engine-bots',
+            headers: {'Authorization': 'Bearer ' + token},
+            type: 'GET',
+            success:function(response)
+            {
+                console.log(response);
+                $('#show-json-result').html('');
+                $('.panel-primary').css('display','block');
+                $('#show-json-result').jsonView(response);
+            },
+                error:function(data){
+                    $('#show-json-result').html('');
+            }
+    });
+}
+
+            
+</script>
+
+{% endblock %}
+{% endblock %}

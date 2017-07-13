@@ -1,0 +1,43 @@
+{% extends "partner_base.html" %}
+{% block content %}
+{% block head %}
+<script src="{{ url_for('static', filename = 'puser.js') }}"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<style>
+    .buttonalign{
+                    margin-top: 20px;
+                }
+</style>      
+{% endblock %}
+{% block body %}
+<div class= "content" style="z-index: 1">
+    <div class="row">
+        <div class="wrapper col-md-offset-4 col-md-4 col-md-offset-4">
+            <form action="/auth/add_pusers" method="post" name="Add_Form">       
+                <h3 class="text-center">Add Partner User</h3>
+                <hr>
+                <div class="form-group">
+                    <h4> Partner Name </h4>
+                    <input type="text" class="form-control Email/Username" name="username" placeholder="username" required="true" autofocus="" />
+                </div>
+                <div class="form-group">
+                    <h4> Email </h4>
+                    <input type="email" class="form-control Email/Username" name="email" placeholder="email" required="true" autofocus="" />
+                </div>
+                <div class="form-group">
+                    <h4> API Server </h4>
+                    <input type="text" class="form-control API Server" name="api_server" placeholder="api_server" required="true" autofocus="" />
+                </div>
+                <div class="form-group">
+                    <h4> Password </h4>
+                    <input type="password" class="form-control Password" name="password" placeholder="password" required="true"/>            
+                </div>
+                <div class="buttonalign">
+                    <button class="btn btn-sm btn-primary btn-block" name="Submit" value="Submit" type="Submit" id="submit">Submit</button>
+                </div>  
+            </form>
+        </div> 
+    </div>
+</div>
+{% endblock %}
+{% endblock %}

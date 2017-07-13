@@ -1,0 +1,116 @@
+Script started on Thursday 06 July 2017 06:14:31 PM IST
+/home/riswin/.virtualenvs/api_test_app/bin/python: No module named virtualenvwrapper
+virtualenvwrapper.sh: There was a problem running the initialization hooks. 
+
+If Python could not import the module virtualenvwrapper.hook_loader,
+check that virtualenvwrapper has been installed for
+VIRTUALENVWRAPPER_PYTHON=/home/riswin/.virtualenvs/api_test_app/bin/python and that PATH is
+set properly.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ python[Kn f[Kflask run.py
+python: can't open file 'flask': [Errno 2] No such file or directory
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ python flask run.py[C[1Prun.py[1Prun.py[1Prun.py[1Prun.py[1Prun.py[1Prun.py[C[C[C[C[C[Cf[K flask
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+Traceback (most recent call last):
+  File "run.py", line 3, in <module>
+    app.run(host='0.0.0.0', port=8080, debug=True)
+  File "/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask/app.py", line 841, in run
+    run_simple(host, port, self, **options)
+  File "/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/werkzeug/serving.py", line 720, in run_simple
+    s.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ps - auf|gref
+error: garbage option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+No command 'gref' found, did you mean:
+ Command 'grep' from package 'grep' (main)
+ Command 'gdef' from package 'firebird2.5-super' (universe)
+ Command 'gdef' from package 'firebird2.5-classic-common' (universe)
+gref: command not found
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ps - auf|gref[Kp
+error: garbage option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ls
+[0m[01;34mapi_main[0m  config.py  config.pyc  mydata.db  output.txt  requirements.txt  run.py  run.pyc  typescript
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ cd api_main
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_api/api_mainriswin@riswin-Vostro-3446:~/Downloads/app_crest_api/api_main$ pytho
+No command 'pytho' found, did you mean:
+ Command 'python' from package 'python-minimal' (main)
+ Command 'python' from package 'python3' (main)
+pytho: command not found
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_api/api_mainriswin@riswin-Vostro-3446:~/Downloads/app_crest_api/api_main$ python
+Python 2.7.12 (default, Nov 19 2016, 06:48:10) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from aooi[K[K[Kpi_main import db,User,Site
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named api_main
+>>> from api_main import db,User,Site User,Site[C[C[C[C[C Site[C[C[C[C
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named api_main
+>>> from api_main import db, User, Site[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kexit()
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_api/api_mainriswin@riswin-Vostro-3446:~/Downloads/app_crest_api/api_main$ cd ..
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ python
+Python 2.7.12 (default, Nov 19 2016, 06:48:10) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from api_main import db, User, Site
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+>>> api[K[K[Kuser = User.query.get(1)[K[K[K[K[K[Kall()
+>>> user.__Dict__
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute '__Dict__'
+>>> user.__Dict__[C[1Pict__dict__
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute '__dict__'
+>>> user.__dict__Dict__ = User.query.all()[1P()[1P()[1P()g()e()t()[C1)
+>>> user.__dict__
+{u'username': u'crestest@ss.com', '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f36d106bad0>, u'api_server': u'https://api.shieldsquare.com/v10', 'site_url': u'cresttest.com', u'email': u'cresttest@ss.com', u'registered_on': datetime.datetime(2017, 6, 21, 11, 56, 56, 474066), u'password': u'password', 'id': 1}
+>>> user.api_server = '[K[K[K[K[Kr
+u'https://api.shieldsquare.com/v10'
+>>> user.api_server = 'http://104.154.251.137/v10'
+>>> db.session.commit()
+>>> db.session.commit()[C[C[C[Cuser.api_server = 'http://104.154.251.137/v10'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+u'http://104.154.251.137/v10'
+>>> user [K = ([KUser.query.get[K[K[K[K[K[K[K[K[K[K[K[K[K[KUser.query.get[K[K[K[K[K[K[K[K[K[K[K[K[K[KUser([K('[K[K[K[K[K[K[K[K[K[K[K[K[Kdb.session.add(user)
+>>> site = Site.query.get(1)
+>>> site.api_key
+u'348f4bfd-f9f9-4474-97c8-15a3e388192c'
+>>> site.api_key=''9'5'a'6'e'a'f'e'-'1'1'e'a'-'4'1'0'd'-'9'8'8'f'-'e'f'9'b'7'd'9'd'a'd'f'8'[C
+>>> db.session.commit()
+>>> db.session.commit()[C[C[C[Csite.api_key='95a6eafe-11ea-410d-988f-ef9b7d9dadf8'[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+u'95a6eafe-11ea-410d-988f-ef9b7d9dadf8'
+>>> exit()
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ mysql -u root -phello[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ks[Kexit 
+exit
+
+Script done on Thursday 06 July 2017 06:27:28 PM IST

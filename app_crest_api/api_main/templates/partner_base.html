@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+    <title> CREST Application </title>
+    <script src = "{{ url_for('static', filename = 'jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'jquery.dataTables.min.css') }}">
+    <script src="{{ url_for('static', filename = 'jquery.json-view.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'jquery.json-view.css') }}">
+<style>
+    .content {
+    margin-left: 0px !important;
+    }
+</style>
+</head>
+<body>
+{% if current_user.is_authenticated %}
+<nav class="navbar navbar-default navbar-static-top navbar-main" role="navigation">
+        <div class="navbar-header">
+            <img src="{{ url_for('static', filename = 'ss-logo.png') }}" alt="logo">
+            <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <!-- <a href='http://www.shieldsquare.co/blog/customer-faq/' target='_blank' ><i style="font-size:14px; color:#696969;" class="fa fa-info-circle"></i> FAQ</a> -->
+                <a href="#" class="dropdown-toggle avatar pull-right" style="left:950px" data-toggle="dropdown" title="/invalidate &#10;Invalidates a token on logout.">
+                    <span class="hidden-small">{{ current_user.email }}<b class="caret"></b></span>
+                </a>
+                <ul class="dropdown-menu pull-right" style="left:950px;">
+                    <li>
+                        <a href="{{ url_for('auth.logout') }}" onclick="signout()">
+                        <i class="fa fa-sign-out"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+</nav>
+<aside class = "sidebar" style="width:190px;">
+<ul class="nav nav-stacked">
+    <li><a href="add_pusers" onclick="add_pusers()"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">ADD PARTNER</i></a></li>
+    <li><a href="pusers" onclick="pusers()"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">LIST PARTNERS</i></a></li>
+</ul>
+</aside>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+
+{% endif %}
+{% block content %}
+{% endblock %}
+</body>
+</html>

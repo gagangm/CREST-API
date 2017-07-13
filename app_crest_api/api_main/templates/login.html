@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+    .buttonalign{
+                   margin-top: 20px;
+                }
+</style>       
+{% endblock %}
+{% block content %}  
+<div class= "content">
+    <div class="row">
+        <div class="wrapper col-md-offset-4 col-md-4 col-md-offset-4">
+            <form action="/auth/signin" method="post" name="Login_Form">       
+                <h3 class="text-center">Sign In</h3>
+                <hr>
+                <div class="form-group">
+                    <h4> Email/Username </h4>
+                    <input type="email" class="form-control Email/Username" name="username" placeholder="Email/Username" required="true" autofocus="" />
+                </div>
+                <div class="form-group">
+                    <h4> Password </h4>
+                    <input type="password" class="form-control Password" name="password" placeholder="Password" required="true"/>            
+                </div>
+                <div class="buttonalign">
+                    <button class="btn btn-sm btn-primary btn-block" name="Submit" value="Login" type="Submit">Login</button>
+                </div>  
+            </form>
+        </div> 
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,333 @@
+Script started on Thursday 06 July 2017 06:09:04 PM IST
+/home/riswin/.virtualenvs/api_test_app/bin/python: No module named virtualenvwrapper
+virtualenvwrapper.sh: There was a problem running the initialization hooks. 
+
+If Python could not import the module virtualenvwrapper.hook_loader,
+check that virtualenvwrapper has been installed for
+VIRTUALENVWRAPPER_PYTHON=/home/riswin/.virtualenvs/api_test_app/bin/python and that PATH is
+set properly.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ script output.txt
+Script started, file is output.txt
+/home/riswin/.virtualenvs/api_test_app/bin/python: No module named virtualenvwrapper
+virtualenvwrapper.sh: There was a problem running the initialization hooks. 
+
+If Python could not import the module virtualenvwrapper.hook_loader,
+check that virtualenvwrapper has been installed for
+VIRTUALENVWRAPPER_PYTHON=/home/riswin/.virtualenvs/api_test_app/bin/python and that PATH is
+set properly.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ python run.py flask
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+Traceback (most recent call last):
+  File "run.py", line 3, in <module>
+    app.run(host='0.0.0.0', port=8080, debug=True)
+  File "/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask/app.py", line 841, in run
+    run_simple(host, port, self, **options)
+  File "/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/werkzeug/serving.py", line 720, in run_simple
+    s.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ps -auf|grep
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ps -auf|grep[C[1P|grepx|grep[C[C[C[C[C
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ps -aux|grep[Kps -aux|grepf|grep |grep[C grep grep[1Pgrep
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ls
+[0m[01;34mapi_main[0m  config.py  config.pyc  mydata.db  output.txt  requirements.txt  run.py  run.pyc  typescript
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ exit
+exit
+Script done, file is output.txt
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ script output.txt
+Script started, file is output.txt
+/home/riswin/.virtualenvs/api_test_app/bin/python: No module named virtualenvwrapper
+virtualenvwrapper.sh: There was a problem running the initialization hooks. 
+
+If Python could not import the module virtualenvwrapper.hook_loader,
+check that virtualenvwrapper has been installed for
+VIRTUALENVWRAPPER_PYTHON=/home/riswin/.virtualenvs/api_test_app/bin/python and that PATH is
+set properly.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ mysql -u root -phe[K[K
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 595
+Server version: 5.7.18-0ubuntu0.16.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select * from project_document;[22Gauth_user_user_permissions;;[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Khow databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| application        |
+| case_sql           |
+| mysql              |
+| performance_schema |
+| sys                |
+| test_sql           |
+| test_test_sql      |
+| xenadb             |
++--------------------+
+9 rows in set (0.00 sec)
+
+mysql> use case_sql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> shoq tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'shoq tables' at line 1
+mysql> shoq tables;[P [1@w 
++----------------------------+
+| Tables_in_case_sql         |
++----------------------------+
+| auth_group                 |
+| auth_group_permissions     |
+| auth_permission            |
+| auth_user                  |
+| auth_user_groups           |
+| auth_user_user_permissions |
+| django_admin_log           |
+| django_content_type        |
+| django_migrations          |
+| django_session             |
+| project_document           |
+| project_project            |
+| project_testcase           |
++----------------------------+
+13 rows in set (0.01 sec)
+
+mysql> select * from auth_group[K[K[K[K[K[K_user;
++----+-------------------------------------------------------------------------------+----------------------------+--------------+----------------+------------+-----------+----------------+----------+-----------+----------------------------+
+| id | password                                                                      | last_login                 | is_superuser | username       | first_name | last_name | email          | is_staff | is_active | date_joined                |
++----+-------------------------------------------------------------------------------+----------------------------+--------------+----------------+------------+-----------+----------------+----------+-----------+----------------------------+
+|  1 | pbkdf2_sha256$30000$z32Uj9nUvwwO$YMp+QuVSUETHpkJNsz+9Jtyf+dHpSizKCpgjZNgubo8= | 2017-07-06 11:06:21.714877 |            1 | admin@ss.com   |            |           | admin@ss.com   |        1 |         1 | 2017-07-03 04:54:39.124175 |
+|  2 | pbkdf2_sha256$30000$7qVF3ok9VSbq$aiXKHiVr+dA98JoUat0ZHP7Cj+eD3+CIkxB956sclMw= | 2017-07-06 10:01:09.251403 |            0 | test123@ss.com | Test       | User      | test123@ss.com |        1 |         1 | 2017-07-06 09:54:34.000000 |
++----+-------------------------------------------------------------------------------+----------------------------+--------------+----------------+------------+-----------+----------------+----------+-----------+----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ exit
+exit
+Script done, file is output.txt
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ script putpt[K[K[K[K[Koutput.txt
+Script started, file is output.txt
+/home/riswin/.virtualenvs/api_test_app/bin/python: No module named virtualenvwrapper
+virtualenvwrapper.sh: There was a problem running the initialization hooks. 
+
+If Python could not import the module virtualenvwrapper.hook_loader,
+check that virtualenvwrapper has been installed for
+VIRTUALENVWRAPPER_PYTHON=/home/riswin/.virtualenvs/api_test_app/bin/python and that PATH is
+set properly.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ python[Kn f[Kflask run.py
+python: can't open file 'flask': [Errno 2] No such file or directory
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ python flask run.py[C[1Prun.py[1Prun.py[1Prun.py[1Prun.py[1Prun.py[1Prun.py[C[C[C[C[C[Cf[K flask
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+Traceback (most recent call last):
+  File "run.py", line 3, in <module>
+    app.run(host='0.0.0.0', port=8080, debug=True)
+  File "/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask/app.py", line 841, in run
+    run_simple(host, port, self, **options)
+  File "/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/werkzeug/serving.py", line 720, in run_simple
+    s.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ps - auf|gref
+error: garbage option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+No command 'gref' found, did you mean:
+ Command 'grep' from package 'grep' (main)
+ Command 'gdef' from package 'firebird2.5-super' (universe)
+ Command 'gdef' from package 'firebird2.5-classic-common' (universe)
+gref: command not found
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ps - auf|gref[Kp
+error: garbage option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ls
+[0m[01;34mapi_main[0m  config.py  config.pyc  mydata.db  output.txt  requirements.txt  run.py  run.pyc  typescript
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ cd api_main
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_api/api_mainriswin@riswin-Vostro-3446:~/Downloads/app_crest_api/api_main$ pytho
+No command 'pytho' found, did you mean:
+ Command 'python' from package 'python-minimal' (main)
+ Command 'python' from package 'python3' (main)
+pytho: command not found
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_api/api_mainriswin@riswin-Vostro-3446:~/Downloads/app_crest_api/api_main$ python
+Python 2.7.12 (default, Nov 19 2016, 06:48:10) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from aooi[K[K[Kpi_main import db,User,Site
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named api_main
+>>> from api_main import db,User,Site User,Site[C[C[C[C[C Site[C[C[C[C
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named api_main
+>>> from api_main import db, User, Site[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kexit()
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_api/api_mainriswin@riswin-Vostro-3446:~/Downloads/app_crest_api/api_main$ cd ..
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ python
+Python 2.7.12 (default, Nov 19 2016, 06:48:10) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from api_main import db, User, Site
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/riswin/.virtualenvs/api_test_app/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+>>> api[K[K[Kuser = User.query.get(1)[K[K[K[K[K[Kall()
+>>> user.__Dict__
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute '__Dict__'
+>>> user.__Dict__[C[1Pict__dict__
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute '__dict__'
+>>> user.__dict__Dict__ = User.query.all()[1P()[1P()[1P()g()e()t()[C1)
+>>> user.__dict__
+{u'username': u'crestest@ss.com', '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f36d106bad0>, u'api_server': u'https://api.shieldsquare.com/v10', 'site_url': u'cresttest.com', u'email': u'cresttest@ss.com', u'registered_on': datetime.datetime(2017, 6, 21, 11, 56, 56, 474066), u'password': u'password', 'id': 1}
+>>> user.api_server = '[K[K[K[K[Kr
+u'https://api.shieldsquare.com/v10'
+>>> user.api_server = 'http://104.154.251.137/v10'
+>>> db.session.commit()
+>>> db.session.commit()[C[C[C[Cuser.api_server = 'http://104.154.251.137/v10'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+u'http://104.154.251.137/v10'
+>>> user [K = ([KUser.query.get[K[K[K[K[K[K[K[K[K[K[K[K[K[KUser.query.get[K[K[K[K[K[K[K[K[K[K[K[K[K[KUser([K('[K[K[K[K[K[K[K[K[K[K[K[K[Kdb.session.add(user)
+>>> site = Site.query.get(1)
+>>> site.api_key
+u'348f4bfd-f9f9-4474-97c8-15a3e388192c'
+>>> site.api_key=''9'5'a'6'e'a'f'e'-'1'1'e'a'-'4'1'0'd'-'9'8'8'f'-'e'f'9'b'7'd'9'd'a'd'f'8'[C
+>>> db.session.commit()
+>>> db.session.commit()[C[C[C[Csite.api_key='95a6eafe-11ea-410d-988f-ef9b7d9dadf8'[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+u'95a6eafe-11ea-410d-988f-ef9b7d9dadf8'
+>>> exit()
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ mysql -u root -phello[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ks[Kexit 
+exit
+Script done, file is output.txt
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ script output.txthistory > history18.txt[Kpython -h[K[K[K[K[K[K[K[K[Kmysql -u root -phello
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 610
+Server version: 5.7.18-0ubuntu0.16.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use case_ql[K[Ksql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> select * from project_document;
++----+---------------+---------+----------------------------+------------+
+| id | title         | version | pub_date                   | project_id |
++----+---------------+---------+----------------------------+------------+
+|  1 | Test Document | 1.0     | 2017-07-03 06:11:11.000000 |          1 |
+|  2 | Test Doc      | 1.0     | 2017-07-06 09:55:48.000000 |          1 |
+|  3 | Django Doc    | 1.1     | 2017-07-06 10:02:04.000000 |          2 |
++----+---------------+---------+----------------------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from project_document;[8Guse case_sql;[K[8Gselect * from project_document;
++----+---------------+---------+----------------------------+------------+
+| id | title         | version | pub_date                   | project_id |
++----+---------------+---------+----------------------------+------------+
+|  1 | Test Document | 1.0     | 2017-07-03 06:11:11.000000 |          1 |
+|  2 | Test Doc      | 1.0     | 2017-07-06 09:55:48.000000 |          1 |
+|  3 | Django Doc    | 1.1     | 2017-07-06 10:02:04.000000 |          2 |
++----+---------------+---------+----------------------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from project_document;[8Guse case_sql;[K[8Gexit[Kselect * from auth_user;[9Ghow tables;[K[11Gq[20G[8Guse case_sql;[8Gshow databases;[8Guse case_sql;[K
+Database changed
+mysql> use case_sql;[8Gselect * from project_document;[8Guse case_sql;[K[8Gselect * from project_document;
++----+---------------+---------+----------------------------+------------+
+| id | title         | version | pub_date                   | project_id |
++----+---------------+---------+----------------------------+------------+
+|  1 | Test Document | 1.0     | 2017-07-03 06:11:11.000000 |          1 |
+|  2 | Test Doc      | 1.0     | 2017-07-06 09:55:48.000000 |          1 |
+|  3 | Django Doc    | 1.1     | 2017-07-06 10:02:04.000000 |          2 |
++----+---------------+---------+----------------------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from project_document;[8G[Kselect * from project_document;[8Guse case_sql;[K[8Gselect * from project_document;[8Guse case_sql;[K[8Gexit[Kselect * from auth_user;[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kselect[K[K[K[K[K[K^DBye
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ ps - a[K[K- auf|grep
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+error: garbage option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ kill bash
+bash: kill: bash: arguments must be process or job IDs
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_ap_crest_api$ ps - a[K[K- auf|grep
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+error: garbage option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ kill bash
+bash: kill: bash: arguments must be process or job IDs
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ port
+No command 'port' found, did you mean:
+ Command 'sort' from package 'coreutils' (main)
+ Command 'psort' from package 'radiance' (universe)
+ Command 'pork' from package 'pork' (universe)
+ Command 'poet' from package 'libpoet-perl' (universe)
+ Command 'prt' from package 'prt' (universe)
+port: command not found
+]0;riswin@riswin-Vostro-3446: ~/Downloads/app_crest_apiriswin@riswin-Vostro-3446:~/Downloads/app_crest_api$ exit

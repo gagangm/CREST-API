@@ -1,0 +1,116 @@
+<!doctype html>
+<head>
+    <title> CREST Application </title>
+    <script src = "{{ url_for('static', filename = 'jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'fonts.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'jquery.dataTables.min.css') }}">
+</head>
+<body>
+{% if current_user.is_authenticated %}
+<nav class="navbar navbar-default navbar-static-top navbar-main" role="navigation">
+    <div class="navbar-header">
+        <img src="{{ url_for('static', filename = 'ss-logo.png') }}" alt="logo">
+        <div style="position: absolute; right:140px; top:12px;">    
+            <input type="text" id="dt1">
+            <input type="text" id="dt2">
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <!-- <a href='http://www.shieldsquare.co/blog/customer-faq/' target='_blank' ><i style="font-size:14px; color:#696969;" class="fa fa-info-circle"></i> FAQ</a> -->
+                <a href="#" class="dropdown-toggle avatar pull-right" style="left:970px;" data-toggle="dropdown" title="/invalidate &#10;Invalidates a token on logout.">
+                    <span class="hidden-small">{{ current_user.email }}<b class="caret"></b></span>
+                </a>
+                <ul class="dropdown-menu pull-right" style="left:970px;">
+                    <li>
+                        <a href="{{ url_for('auth.logout') }}" onclick= "signout()">
+                        <i class="fa fa-sign-out"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<aside class = "sidebar" style="width:220px;">
+<ul class="nav nav-stacked">
+<li class="active"><a href="#" title="They give a summary of distinct and collective stats over the complete traffic received at ShieldSquare's bot Engine."><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">SUMMARY APIs</i></a></li>
+    <ul>
+        <li><a href="#" onclick="get_stats()" title=" /summary/stats/all?starttime=<>&endtime=<>"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">STATS ALL</i></a></li>
+        <li><a href="#" onclick="get_signatures()" title=" /summary/stats/signatures?starttime=<>&endtime=<>"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">SIGNATURES</i></a></li>
+        <li><a href="#" onclick="get_api_hits()" title=" /summary/stats/api-hits?starttime=<>&endtime=<>"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">API-HITS</i></a></li>
+        <li><a href="#" onclick="get_bot_traffic()" title=" /summary/classification/bot-traffic?starttime=<>&endtime=<>"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">BOT-TRAFFIC</i></a></li>
+        <li><a href="#" onclick="get_bad_bots()" title=" /summary/traffic/bad-bots?starttime=<>&endtime=<>"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">BAD-BOTS</i></a></li>
+        <li><a href="#" onclick="get_legitimate_bots()" title=" /summary/traffic/legitimate-bots?starttime=<>&endtime=<>"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">LEGITIMATE-BOTS</i></a></li>
+        <li><a href="#" onclick="get_searchengine()" title="/analysis/search-engine-bots?starttime=<>&endtime=<>"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">SEARCH ENGINE BOT</i></a></li>
+        <li><a href="#" onclick="get_botanalysis()" title="/live/analysis/search-engine-bots"><i class="fa fa-bars" style="color:#337ab7;" aria-hidden="true">LIVE SEARCH ENGINE BOT</i></a></li>
+    </ul>
+</ul>
+</aside>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+
+<script>
+
+setTimeout(function() { alert("Token is expired! Please sign in again to continue."); }, 300000);
+
+    function signout(){
+    console.log("in signout");
+    var token = sessionStorage.getItem('token'); 
+    console.log(token);
+        $.ajax({
+            url : '/auth/token_invalidate',
+            data: {'token': token},
+            type: 'POST',
+            success:function(response)
+            {
+                console.log('in success');
+                console.log(response);    
+            },
+            error:function(response)
+            {
+                console.log('in error');
+                console.log(response.status);
+            }
+        }); 
+}
+
+
+$(document).ready(function () {
+
+        $("#dt1").datepicker({
+            dateFormat: "dd-mm-yy",
+            minDate: 0,
+            onSelect: function (date) {
+                var dt2 = $('#dt2');
+                var startDate = $(this).datepicker('getDate');
+                var minDate = $(this).datepicker('getDate');
+                dt2.datepicker('setDate', 'minDate' + 3);
+                startDate.setDate(startDate.setDate());
+                dt2.datepicker('option', 'maxDate', startDate);
+                dt2.datepicker('option', 'minDate', minDate);
+                $(this).datepicker('option', 'minDate', minDate);
+                }
+            });
+            $("#dt2").datepicker({
+            dateFormat: "dd-mm-yy"
+        });
+    });
+    
+</script>
+{% endif %}
+{% block content %}
+{% endblock %}
+</body>
+</html>

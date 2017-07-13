@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+{% block head %}
+<script src="{{ url_for('static', filename = 'user.js') }}"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block body %}
+
+<div class="content" style="z-index: 1;">     
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Users
+                </div>
+                <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
+                    <table class="display hover" id="example" width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Site URL</th>
+                            <th>Status</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>     
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content" style="z-index: 999; position: absolute; right: 240px; top: 10px;">     
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary" id="box" style="display:none;">
+                <div class="panel-heading">
+                <button type="button" class="close" data-target="#box" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span><span class="sr-only">X</span>
+                </button>
+                    Subscribers
+                </div>
+                <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
+                    <div id = "show-json-result"></div>
+                    <input type="hidden" id = "userid" value="{{current_user.id}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% endblock %}

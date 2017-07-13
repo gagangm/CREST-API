@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block head %}
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="{{ url_for('static', filename = 'user.js') }}"></script>
+<style>
+    .buttonalign{
+                    margin-top: 20px;
+                }
+</style>       
+{% endblock %}
+{% block content %}
+<div class= "content" style="z-index: 1">
+    <div class="row">
+        <div class="wrapper col-md-offset-4 col-md-4 col-md-offset-4">
+            <form action="/auth/add_users" method="post" name="Add_Form">       
+                <h3 class="text-center">Add User</h3>
+                <hr>
+                <div class="form-group">
+                    <h4> Username </h4>
+                    <input type="text" class="form-control Email/Username" name="username" id="username" placeholder="username" required="true" autofocus="" />
+                </div>
+                <div class="form-group">
+                    <h4> Password </h4>
+                    <input type="password" class="form-control Password" name="password" id="password" placeholder="password" required="true"/>            
+                </div>
+                <div class="form-group">
+                    <h4> Email </h4>
+                    <input type="email" class="form-control Email/Username" name="email" id="email" placeholder="email" required="true" autofocus="" />
+                </div>
+                <div class="form-group">
+                    <h4> Site_url </h4>
+                    <input type="text" class="form-control site_url" name="site_url" id="site_url" placeholder="site_url" required="true" autofocus="" />
+                </div>
+                <div class="buttonalign">
+                    <button class="btn btn-sm btn-primary btn-block" name="Submit" value="Submit" type="Submit" id="submit">Submit</button>
+                </div>  
+            </form>
+        </div> 
+    </div>
+</div>
+<div class="content" style="z-index: 999; position: absolute; right: 240px; top: 10px;" >     
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary" id="box" style="display:none;">
+                <div class="panel-heading">
+                <button type="button" class="close" data-target="#box" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span><span class="sr-only">X</span>
+                </button>
+                    Subscribers
+                </div>
+                <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
+                    <div id = "show-json-result"></div>
+                    <input type="hidden" id = "userid" value="{{current_user.id}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+$( "#username" ).focusout(function() {
+    username = $(this).value;
+    $.ajax({
+       method: "GET",
+       url: "/auth/get_users",
+       data: { username: "username" }
+    }).done(function( response ) {
+       if(response == "taken"){
+       console.log($username);
+        ("#username").css("border-Color","red");
+       }
+    });
+});
+
+$( "#email" ).focusout(function() {
+    email = $(this).value;
+    $.ajax({
+       method: "GET",
+       url: "/auth/get_users",
+       data: { email: "email" }
+    }).done(function( response ) {
+       if(response == "taken"){
+        ("#email").css("border-Color","red");
+       }
+    });
+});
+
+$( "#site_url" ).focusout(function() {
+    site_url = $(this).value;
+    $.ajax({
+       method: "GET",
+       url: "/auth/get_users",
+       data: { site_url: "site_url" }
+    }).done(function(response) {
+       if(response == "taken"){
+        ("#site_url").css("border-Color","red");
+       }
+    });
+});
+
+</script>
+
+{% endblock %}
