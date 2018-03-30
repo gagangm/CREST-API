@@ -1,5 +1,5 @@
 # CREST-API
-A project on REST API, I worked on while I was a trainee software engineer in ShieldSquare.
+A project on REST API.
 This project's been developed in Python language with flask framework.
 This project is also incorporated with JavaScript, HTML and CSS languages.
 This project has used multiple packages from JavaScript and CSS.
